@@ -1,0 +1,43 @@
+---
+export function getStaticPaths() {
+	return [
+		{
+			params: { errorCode: '400' }
+		},
+		{ params: { errorCode: '401' } },
+		{ params: { errorCode: '403' } },
+		{ params: { errorCode: '404' } },
+		{ params: { errorCode: '405' } },
+		{ params: { errorCode: '406' } },
+		{ params: { errorCode: '407' } },
+		{ params: { errorCode: '408' } },
+		{ params: { errorCode: '409' } },
+		{ params: { errorCode: '410' } },
+		{ params: { errorCode: '411' } },
+		{ params: { errorCode: '412' } },
+		{ params: { errorCode: '413' } },
+		{ params: { errorCode: '414' } },
+		{ params: { errorCode: '421' } },
+		{ params: { errorCode: '429' } },
+		{ params: { errorCode: '500' } },
+		{ params: { errorCode: '501' } },
+		{ params: { errorCode: '502' } },
+		{ params: { errorCode: '503' } },
+		{ params: { errorCode: '504' } },
+		{ params: { errorCode: '511' } }
+	];
+}
+
+import ErrorComponent from '../components/ErrorComponent.astro';
+import Layout from '../layouts/Layout.astro';
+
+const { errorCode } = Astro.params;
+const errorCodeNumber = parseInt(errorCode, 10);
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title={}>
+	<ErrorComponent errorCode={errorCodeNumber} />
+</Layout>
