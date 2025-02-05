@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Blocked">
+	<div class="container">
+		<h1>Blocked</h1>
+		<h2>Você foi impedido de acessar essa página</h2>
+		<p class="message">
+			Seu IP foi bloqueado por nosso sistema de segurança. Entre em contato caso isso seja um erro.
+		</p>
+	</div>
+</Layout>
+
+<style>
+	.container {
+		text-align: center;
+		padding: 1rem;
+	}
+	h1,
+	h2 {
+		margin: 0;
+		font-weight: 600;
+	}
+	.message {
+		white-space: pre-wrap;
+		line-height: 1.6;
+	}
+</style>
