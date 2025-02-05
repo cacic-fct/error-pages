@@ -7,3 +7,5 @@ A página apresenta [uma descrição do erro](https://developer.mozilla.org/en-U
 ![Captura de tela do projeto](.assets/screenshot.png)
 
 Nenhuma requisição pode ser feita, incluindo de JS, de CSS e de imagens, pela particularidade da entrega da página de erro.
+
+A atualização dos arquivos é manual e requer acesso ao servidor.
