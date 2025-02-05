@@ -12,9 +12,11 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#dfdfdf" />
+		<title>{title}</title>
 	</head>
 	<body>
 		<div class="container">
+			<!-- Needs to be encoded because error pages don't load external resources, not even if served from the same origin -->
 			<img
 				class="mouse"
 				alt="Ratinho apagando um incêncio em um computador"
