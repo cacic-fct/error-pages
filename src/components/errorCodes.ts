@@ -3,6 +3,7 @@ export const errorCodes: {
 		english: string;
 		portuguese: string;
 		description: string;
+		cacicDescription?: string;
 	};
 } = {
 	'400': {
@@ -21,13 +22,17 @@ export const errorCodes: {
 		english: 'Forbidden',
 		portuguese: 'Proibido',
 		description:
-			'O cliente não tem direitos de acesso ao conteúdo, ou seja, o servidor se recusa a fornecer o recurso solicitado. Ao contrário do “401 Unauthorized”, a identidade do cliente é conhecida pelo servidor.\n\nPara serviços hospedados pelo CACiC, isso também pode significar que o acesso só é permitido a partir da unespNET. Conecte-se à VPN e tente novamente.\nSe você já está conectado à VPN, pode ser que o seu navegador esteja usando o IPv6 da sua operadora para acessar o site. Tente bloquear o IPv6 nas configurações do OpenVPN.'
+			'O cliente não tem direitos de acesso ao conteúdo, ou seja, o servidor se recusa a fornecer o recurso solicitado. Ao contrário do “401 Unauthorized”, a identidade do cliente é conhecida pelo servidor.',
+		cacicDescription:
+			'Para serviços hospedados pelo CACiC, isso também pode significar que o acesso só é permitido a partir da unespNET. Conecte-se à VPN e tente novamente.\nSe você já está conectado à VPN, pode ser que o seu navegador esteja usando o IPv6 da sua operadora para acessar o site. Tente bloquear o IPv6 nas configurações do OpenVPN.'
 	},
 	'404': {
 		english: 'Not Found',
 		portuguese: 'Não encontrado',
 		description:
-			'O servidor não conseguiu encontrar o recurso solicitado. No navegador, isso significa que o URL não é reconhecido. Numa API, isso pode significar que o endpoint é válido, mas o recurso em si não existe. Os servidores também podem enviar esta resposta em vez de “403 Forbidden” para ocultar a existência de um recurso de um cliente não autorizado.\n\nPara serviços hospedados pelo CACiC, isso também pode significar que uma rota para recurso não existe no proxy reverso.'
+			'O servidor não conseguiu encontrar o recurso solicitado. No navegador, isso significa que o URL não é reconhecido. Numa API, isso pode significar que o endpoint é válido, mas o recurso em si não existe. Os servidores também podem enviar esta resposta em vez de “403 Forbidden” para ocultar a existência de um recurso de um cliente não autorizado.',
+		cacicDescription:
+			'Para serviços hospedados pelo CACiC, isso também pode significar que uma rota para recurso não existe no proxy reverso.'
 	},
 	'405': {
 		english: 'Method Not Allowed',
@@ -80,7 +85,9 @@ export const errorCodes: {
 		english: 'Content Too Large',
 		portuguese: 'Conteúdo muito grande',
 		description:
-			'O corpo do pedido é maior do que os limites definidos pelo servidor. O servidor pode encerrar a conexão ou devolver um campo de cabeçalho “Retry-After”.\n\nPara serviços hospedados pelo CACiC, isso também pode significar que conteúdo ultrapassa o limite permitido pelo Cloudflare (150 MB).'
+			'O corpo do pedido é maior do que os limites definidos pelo servidor. O servidor pode encerrar a conexão ou devolver um campo de cabeçalho “Retry-After”.',
+		cacicDescription:
+			'Para serviços hospedados pelo CACiC, isso também pode significar que conteúdo ultrapassa o limite permitido pelo Cloudflare (150 MB).'
 	},
 	'414': {
 		english: 'URI Too Long',
@@ -92,7 +99,9 @@ export const errorCodes: {
 		english: 'Misdirected Request',
 		portuguese: 'Pedido mal direcionado',
 		description:
-			'O pedido foi direcionado a um servidor que não foi capaz de produzir uma resposta.\n\nPara serviços hospedados pelo CACiC, isso também pode significar que você não deve acessar o IP do servidor diretamente. Utilize o domínio correto.'
+			'O pedido foi direcionado a um servidor que não foi capaz de produzir uma resposta.',
+		cacicDescription:
+			'Para serviços hospedados pelo CACiC, isso também pode significar que você não deve acessar o IP do servidor diretamente. Utilize o domínio correto.'
 	},
 	'429': {
 		english: 'Too Many Requests',
@@ -128,7 +137,9 @@ export const errorCodes: {
 		english: 'Gateway Timeout',
 		portuguese: 'Esgotou o tempo limite do gateway',
 		description:
-			'O servidor, enquanto trabalhava como gateway para obter uma resposta necessária para tratar o pedido, não obteve uma resposta a tempo.\n\nPara serviços hospedados pelo CACiC, isso também pode significar que o proxy reverso está mal configurado ou o serviço está fora do ar.'
+			'O servidor, enquanto trabalhava como gateway para obter uma resposta necessária para tratar o pedido, não obteve uma resposta a tempo.',
+		cacicDescription:
+			'Para serviços hospedados pelo CACiC, isso também pode significar que o proxy reverso está mal configurado ou o serviço está fora do ar.'
 	},
 	'511': {
 		english: 'Network Authentication Required',

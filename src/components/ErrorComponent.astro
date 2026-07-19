@@ -2,26 +2,33 @@
 import { errorCodes } from './errorCodes';
 interface Props {
 	errorCode: number;
+	showCacicDescription?: boolean;
 }
-const { errorCode } = Astro.props;
+const { errorCode, showCacicDescription = false } = Astro.props;
+const error = errorCodes[errorCode];
 ---
 
 <div class="container">
 	<h1>
 		{errorCode}
-		{errorCodes[errorCode].english}
+		{error.english}
 	</h1>
 	<h2>
-		{errorCodes[errorCode].portuguese}
+		{error.portuguese}
 	</h2>
 	<p class="message">
-		{errorCodes[errorCode].description}<sup
+		{error.description}<sup
 			><a
 				href=`https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/${errorCode}`
 				target="_blank">[↗]</a
 			></sup
 		>
 	</p>
+	{
+		showCacicDescription && error.cacicDescription && (
+			<p class="message">{error.cacicDescription}</p>
+		)
+	}
 </div>
 
 <style>
