@@ -1,5 +1,5 @@
 ---
-import '@fontsource-variable/inter';
+import { Font } from 'astro:assets';
 import mouse from '../assets/mouse.avif';
 
 interface Props {
@@ -15,6 +15,8 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#dfdfdf" />
+		<Font cssVariable="--font-inter" />
+
 		<title>{title}</title>
 	</head>
 	<body>
@@ -43,7 +45,9 @@ const { title } = Astro.props;
 <style>
 	body {
 		background-color: #dfdfdf;
-		font-family: 'Inter Variable', system-ui, sans-serif;
+  font-family:
+    var(--font-inter), 'Inter', 'Helvetica Neue', 'Neue Helvetica', 'Helvetica', 'Roboto', 'Arial', ui-sans-serif,
+    system-ui, sans-serif;
 		display: flex;
 		justify-content: center;
 		align-items: center;
