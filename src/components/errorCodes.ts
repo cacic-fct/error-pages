@@ -32,7 +32,7 @@ export const errorCodes: {
 		description:
 			'O servidor não conseguiu encontrar o recurso solicitado. No navegador, isso significa que o URL não é reconhecido. Numa API, isso pode significar que o endpoint é válido, mas o recurso em si não existe. Os servidores também podem enviar esta resposta em vez de “403 Forbidden” para ocultar a existência de um recurso de um cliente não autorizado.',
 		cacicDescription:
-			'Para serviços hospedados pelo CACiC, isso também pode significar que uma rota para recurso não existe no proxy reverso.'
+			'Para serviços hospedados pelo CACiC, isso também pode significar que uma rota para recurso não existe no proxy reverso. Se você acredita que isso é um erro, entre em contato conosco.'
 	},
 	'405': {
 		english: 'Method Not Allowed',
